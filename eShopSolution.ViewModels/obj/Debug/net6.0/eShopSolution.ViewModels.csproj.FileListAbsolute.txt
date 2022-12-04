@@ -1,0 +1,15 @@
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\bin\Debug\net6.0\eShopSolution.ViewModels.deps.json
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\bin\Debug\net6.0\eShopSolution.ViewModels.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\bin\Debug\net6.0\eShopSolution.ViewModels.pdb
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.csproj.AssemblyReference.cache
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.AssemblyInfoInputs.cache
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.AssemblyInfo.cs
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\refint\eShopSolution.ViewModels.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.pdb
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\ref\eShopSolution.ViewModels.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\bin\Debug\net6.0\eShopSolution.Data.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\bin\Debug\net6.0\eShopSolution.Data.pdb
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.ViewModels\obj\Debug\net6.0\eShopSolution.ViewModels.csproj.CopyComplete

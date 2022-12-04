@@ -1,0 +1,12 @@
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\bin\Debug\net6.0\eShopSolution.Utilities.deps.json
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\bin\Debug\net6.0\eShopSolution.Utilities.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\bin\Debug\net6.0\eShopSolution.Utilities.pdb
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\eShopSolution.Utilities.csproj.AssemblyReference.cache
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\eShopSolution.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\eShopSolution.Utilities.AssemblyInfoInputs.cache
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\eShopSolution.Utilities.AssemblyInfo.cs
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\eShopSolution.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\eShopSolution.Utilities.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\refint\eShopSolution.Utilities.dll
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\eShopSolution.Utilities.pdb
+C:\Users\muonroi\Downloads\Compressed\mimi\eShopSolution-develop\eShopSolution-develop\eShopSolution.Utilities\obj\Debug\net6.0\ref\eShopSolution.Utilities.dll

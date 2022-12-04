@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "atqInBuqkJ5sqhBjt7TsS7x/iKCcISiphGAxkrD1vBFqhQmNL6oba8f0YeOylvAb9psNPdGNDLdzPELtVeBXsg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Admin\\Downloads\\eShopSolution-develop\\eShopSolution.ApiIntegration\\eShopSolution.ApiIntegration.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project eShopSolution.Utilities is not compatible with net5.0 (.NETCoreApp,Version=v5.0). Project eShopSolution.Utilities supports: net6.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "eShopSolution.Utilities",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project eShopSolution.ViewModels is not compatible with net5.0 (.NETCoreApp,Version=v5.0). Project eShopSolution.ViewModels supports: net6.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "eShopSolution.ViewModels",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
