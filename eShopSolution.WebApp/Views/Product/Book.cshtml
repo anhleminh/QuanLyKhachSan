@@ -1,0 +1,100 @@
+﻿@model eShopSolution.ViewModels.Catalog.Products.ProductVm
+@{
+    ViewData["Title"] = "Đặt Phòng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="form-input">
+        <p class="title-inputs">Quý khách vui lòng nhập thông tin đặt phòng các mục dưới đây</p>
+        <form asp-action="Book" asp-controller="Cart" class="form-info--book">
+            <p class="title-input">THÔNG TIN CƠ BẢN</p>
+
+            <div class="bao">
+
+                <div class="input--left">
+                    <label class="lbsa" for="">Tên của bạn <sup>*</sup></label>
+
+                    <input asp-for="Name" class="input--info" type="text" placeholder="Nhập tên" required />
+                    <label class="lbsa" for="">Số điện thoại <sup>*</sup></label>
+
+                    <input required asp-for="Phone" class="input--info" type="number" placeholder="Nhập số điện thoại" />
+                    <label class="lbsa" for="">Tỉnh/Thành phố <sup>*</sup></label>
+                    <select id="childs" name="calc_shipping_provinces" required="">
+                        <option value="">Tỉnh / Thành phố</option>
+                    </select>
+                    <label class="lbsa" for="">Quận/Huyện <sup>*</sup></label>
+                    <select id="childs" name="calc_shipping_district" required="">
+                        <option value="">Quận / Huyện</option>
+                    </select>
+                    <input class="billing_address_1" name="" type="hidden" value="">
+                    <input class="billing_address_2" name="" type="hidden" value="">
+                    <label class="lbsa" for="adults">Loại Phòng</label>
+                    <select required id="childs" name="adults">
+                        <option value="1">Phòng thường</option>
+                        <option value="1">Phòng Vip</option>
+                        <option value="2">Phòng đôi</option>
+                        <option value="3">Phòng đơn</option>
+                    </select>
+                    <label class="lbsa" for="childs">Số Người</label>
+                    <select required id="childs" name="childs">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                    </select>
+                    <label class="lbsa" for="">Giá<sup>*</sup></label>
+
+                    <input required class="input--info" type="number" placeholder="Nhập giá phòng" />
+                </div>
+                <div class="input--right">
+                    <label class="lbsa" for="email">Email của bạn <sup>*</sup></label>
+
+                    <input asp-for="Email" required name="email" class="input--info" type="email" placeholder="Email" />
+                    <label class="lbsa" for="cmnd">CMND/Họ Chiếu <sup>*</sup></label>
+                    <input asp-for="Cmnd" required name="cmnd" minlength="9" maxlength="15" class="input--info" type="number" placeholder="CMND/Hộ chiếu" />
+                    <label class="lbsa" for="">Ngày nhận phòng</label>
+
+                    <input required class="input--info departDate" type="date" placeholder="Ngày nhận phòng" />
+                    <label class="lbsa" for="">Ngày trả phòng</label>
+
+                    <input onchange="Check()" required class="input--info returnDate" type="date" placeholder="Ngày trả phòng" />
+                    <label class="lbsa" for="typeroom">Tiền đặt cọc</label>
+                    <input required class="input--info" type="number" placeholder="Tiền đặt cọc" />
+                    <label style="visibility: hidden;" class="lbsa" for="">Ngày nhận phòng</label>
+
+                    <input style="visibility: hidden;" class="input--info" type="date" placeholder="Ngày nhận phòng" />
+                    <label style="visibility: hidden;" class="lbsa" for="">Ngày nhận phòng</label>
+
+                    <input style="visibility: hidden;" class="input--info" type="date" placeholder="Ngày nhận phòng" />
+
+                </div>
+            </div>
+            <label style="margin-left:20px" class="lbsa" for="are">Thông tin bổ sung</label>
+            <textarea name="are" class="input--info tt" cols="93" rows="7"></textarea>
+            <div class="d-none">
+                @{
+                    int id = int.Parse(TempData["ID"].ToString());
+                }
+                <input type="text" asp-for="UserName" value="@User.Identity.Name" />
+                <input type="text" asp-for="Id" value="@id" />
+
+            </div>
+            <input class="submit--book" type="submit" value="Hoàn tất" />
+        </form>
+    </div>
+}
+else
+{
+    <script>
+        window.location.href = "/@culture/Account/Login";
+    </script>
+}

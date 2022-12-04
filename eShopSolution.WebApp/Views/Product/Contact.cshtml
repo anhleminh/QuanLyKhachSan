@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Giới Thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+<div class="layout">
+    <div class="baolayout">
+        <div class="layout-map">
+            <img src="/img/map.png">
+        </div>
+        <div class="column-rb">
+            <div class="rabbit">
+                <div class="rb">
+                    <img src="/img/rabbit.png">
+                </div>
+                <div class="form-contact">
+                    <div class="cte">
+                        <img src="/img/iconmap.png" />
+                        <p class="test-map">24 Võ Nguyên Giáp, Phường Phước Mỹ, Quận Ngũ Hành Sơn, TP. Đà Nẵng </p>
+
+                    </div>
+                    <div class="cte">
+                        <img src="/img/iconmail.png" />
+                        <p class="test-map"> lem52366@gmail.com </p>
+
+                    </div>
+                    <div class="cte">
+                        <img src="/img/iconphone.png" />
+                        <p class="test-map"> 1900 313 848 </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-lh">
+                <form action="">
+                    <span class="bshadow">Lucky hotel</span>
+                    <p class="test-map2">LIÊN HỆ VỚI CHÚNG TÔI</p>
+                    <input class="bl" type="text" v-model="Name" />
+                    <input class="bl" type="text" v-model="Email" />
+                    <input class="bl" type="text" v-model="Note" />
+                    <input class="bl bts" type="submit" v-model="Btn" />
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,88 @@
+﻿@model eShopSolution.ViewModels.System.Users.UserVm
+@{
+    ViewData["Title"] = "Giới Thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+    <div class="layout--tt1">
+        <div class="tt-bao">
+            <form class="tt1--form" action="">
+                <div class="cardandsale">
+                    <div class="ttguest">
+                        <div class="headett">
+                            <img style="width: 30px;
+                        height: 30px; display:block" src="/img/homett.png" />
+                            <p class="tt">Thông tin Khách hàng</p>
+                        </div>
+                        <div class="mailtt">
+                            @{
+                            var name = Model.LastName.ToString() + " " + Model.FirstName.ToString();
+                        }
+                        <input class="tt-in" type="text" placeholder="Họ và tên" value="@name">
+                    </div>
+                    <div class="mailtt">
+                        <input class="tt-in" type="text" placeholder="Số điện thoại" value="@Model.PhoneNumber">
+                        <input class="tt-in" type="text" placeholder="Email" value="@Model.Email">
+                    </div>
+                    <div class="mailt">
+                        <input type="checkbox" checked> <span>Tôi đã đặt phòng</span>
+                    </div>
+                </div>
+                <div class="ttsale">
+                    <div class="headett ssas">
+                        <div class="ttleft">
+                            <img style="width: 30px;
+                            height: 30px; display:block" src="/img/homett.png" />
+                            <p class="tt">Mã giảm giá</p>
+                        </div>
+                        <div class="ttright">
+                            <img src="/img/addtt.png" />
+                        </div>
+                    </div>
+                    <div class="div-spthinhhanh">
+                        <span class="border-ct">Hoặc</span>
+                    </div>
+                    <p class="pthinhanhtt">Chọn voucher có sẳn của bạn</p>
+
+                </div>
+            </div>
+            <div class="requiredspecical">
+                <div class="headett">
+                    <img style="width: 30px;
+                    height: 30px; display:block" src="/img/homett.png" />
+                    <p class="tt">Yêu cầu đặt biệt</p>
+                </div>
+                <div class="bl--tt">
+                    <input style="display:inline-block;margin:10px" type="checkbox" checked> <span>Tôi đã đặt phòng</span>
+
+                </div>
+                <div class="bl--tt">
+                    <input style="display:inline-block;margin:10px" type="checkbox" checked> <span>Phòng ở tầng cao</span>
+
+                </div>
+                <div class="bl--tt">
+                    <input style="display:inline-block;margin:10px" type="checkbox" checked> <span>Phòng có view hướng biển</span>
+
+                </div>
+                <div class="bl--tt">
+                    <input style="display:inline-block;margin:10px" type="checkbox" checked> <span>Yêu cầu khác</span>
+
+                </div>
+                <textarea style="margin:20px 0" placeholder="Nhập yêu cầu khác" name="are" class="input--info tts" cols="60" rows="8">
+                </textarea>
+            </div>
+        </form>
+        <form asp-action="Tt2" asp-controller="Cart">
+            <div class="div-tt">
+                <a href="/" class="back-tt">Quay lại</a>
+                <input type="submit" class="continue-tt" value="Tiếp tục" />
+            </div>
+        </form>
+    </div>
+
+</div>

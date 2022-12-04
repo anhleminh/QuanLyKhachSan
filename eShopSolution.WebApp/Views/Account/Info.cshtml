@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Giới Thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+    <p style="
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height */
+    padding:10px;
+
+    color: rgba(0, 0, 0, 0.7);">Thông tin người dùng</p>
+    <div class="tt-change">
+        <div class="bao-change">
+            <div class="change-left">
+                <div class="tt-left-child">
+                    <img style="display:block" src="/img/Person.png" />
+                    <p class="tt-left-pr">Thông tin tài khoản</p>
+                </div>
+                <div class="tt-left-child">
+                    <img style="display:block" src="/img/Password.png" />
+                    <p class="tt-left-pr">Thay đổi mật khẩu</p>
+                </div>
+                <div class="tt-left-child">
+                    <img style="display:block" src="/img/Connect.png" />
+                    <p class="tt-left-pr">Hủy phòng đã đặt</p>
+                </div>
+            </div>
+            <div class="change-tight">
+                <form>
+                    <label class="pass--current-lb" for="pass--current">Mật khẩu hiện tại</label>
+                    <input style="display:block" type="text" class="pass--current" name="pass--current" placeholder="******************" />
+                    <label class="pass--current-lb" for="pass--current1">Mật khẩu mới</label>
+                    <input style="display:block" type="text" class="pass--current" name="pass--current1" placeholder="******************" />
+                    <label class="pass--current-lb" for="pass--current2">Xác nhận mật khẩu mới</label>
+                    <input style="display:block" type="text" class="pass--current" name="pass--current2" placeholder="******************" />
+                    <div class="fl-btn">
+                        <input class="pass--change-btn" type="submit" value="Đổi mật khẩu">
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>

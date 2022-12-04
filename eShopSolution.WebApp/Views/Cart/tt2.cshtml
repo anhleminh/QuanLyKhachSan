@@ -1,0 +1,140 @@
+﻿@model ProductDetailViewModel
+@{
+    ViewData["Title"] = "Giới Thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+    <div class="tt2-layout">
+        <div class="baott2">
+            <div class="tt2-left">
+                <div class="header-tt2">
+                    <img style="width: 30px;
+                    height: 30px; display:block" src="/img/homett.png" />
+                    <p class="tt">Thông tin phòng</p>
+                </div>
+                <div class="header2-tt2">
+                    <div class="header2--title--tt2">
+                        <p class="header2--des--tt2">@Model.Product.Name</p>
+                        <p class="header2--des2--tt2">
+                            Danh mục: @for (int i = 0; i < @Model.Product.DanhMuc.Count; i++)
+                        {
+                            string s1 = default;
+                            if (i != @Model.Product.DanhMuc.Count - 1)
+                            {
+                                s1 += $"{@Model.Product.DanhMuc[i]}, ";
+                            }
+                            else
+                            {
+                                s1 += $"{@Model.Product.DanhMuc[i]}";
+                            }
+                            @(s1)
+                        }
+                    </p>
+
+                </div>
+                <div class="header2--img--tt2">
+                    <img src="/img/ks.png" class="header2--img-des-tt2">
+                </div>
+            </div>
+            <div class="body-tt2">
+                <div class="tt2-1">
+                    <img src="/img/slnguoi.png" class="body-tt2-img">
+                    <p class="body--des-tt2">
+                        5 đêm, 11/11/2022 - 16/11/2022
+                    </p>
+                </div>
+                <div class="tt2-1">
+                    <img src="/img/usernguoi.png" class="body-tt2-img">
+                    <p class="body--des-tt2">
+                        2 người lớn
+                    </p>
+                </div>
+            </div>
+            <div class="body2-tt2">
+                <div class="body2--tt2-des2">
+                    <p class="title--tt2--body2">Giá thuê 5 đêm</p>
+                    <p class="title--tt2--body2">
+                        @{
+                            CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                            string salePrice = Model.Product.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                            double temp = Convert.ToDouble(Model.Product.OriginalPrice.ToString());
+                            double tong = Convert.ToInt32(temp) * 5;
+                            double giatien = Convert.ToInt32(temp) * 5 + 432000;
+                            double giacuoi = (Convert.ToInt32(temp) * 5 + 432000) - 200000;
+                            string salePrice2 = tong.ToString("#,###", culs.NumberFormat);
+                            string salePrice3 = giatien.ToString("#,###", culs.NumberFormat);
+                            string salePrice4 = giacuoi.ToString("#,###", culs.NumberFormat);
+                        }
+                        @(salePrice2) đ
+                    </p>
+                </div>
+                <div class="body2--tt2-des2">
+                    <p class="title--tt2--body2">Phí dịch vụ</p>
+                    <p class="title--tt2--body2">
+                        432,000đ
+                    </p>
+                </div>
+                <div class="body2--tt2-des2">
+                    <p class="title--tt2--body2">Tổng giá phòng</p>
+                    <p class="title--tt2--body2">@(salePrice3) đ</p>
+                </div>
+                <div class="body2--tt2-des2">
+                    <p class="title--tt2--body2">Mã giảm giá</p>
+                    <p style="color: #14C1C7;" class="title--tt2--body2">-200,000đ</p>
+                </div>
+            </div>
+            <div class="footer-tt2">
+                <div class="body2--tt2-des2">
+                    <div class="tt-des2">
+                        <p class="title--tt2--body2 bolfs">Tổng tiền thanh toán</p>
+                        <span class="title--tt2--body2-des">Đã bao gồm thuế, phí, VAT</span>
+                    </div>
+
+                    <p class="title--tt2--body2 bolfs">@(salePrice4) đ</p>
+                </div>
+            </div>
+        </div>
+        <div class="tt2-right">
+            <div class="header-tt2">
+                <img style="width: 30px;
+                    height: 30px; display:block" src="/img/homett.png" />
+                <p class="tt">Phương thức thanh toán</p>
+            </div>
+            <p class="msg-tt2">
+                Sau khi hoàn tất thanh toán, mã xác nhận phòng sẽ được gửi ngay qua SMS và Email của bạn
+            </p>
+            <div class="shipper--tt2">
+                <div class="shipper-left">
+                    <div class="baoship">
+                        <img class="ha" src="/img/shipper.png" /> <span style="padding-left:10px;">Chuyển khoảng ngân hàng</span>
+
+                    </div>
+                    <input class="ha" type="radio" name="1">
+
+                </div>
+                <div class="shipper-left">
+                    <div class="baoship">
+                        <img class="ha" src="/img/atm.png" /> <span style="padding-left:10px;">Thẻ ATM/ Tài khoản ngân hàng</span>
+
+                    </div>
+                    <input required class="ha" type="radio" name="1">
+                </div>
+
+            </div>
+            <div class="shipper--tt2"></div>
+            <form asp-action="Successtt" asp-controller="Cart" class="ini">
+                <input onclick="myFunction()" class="bt-tt2" type="submit" value="Thanh toán">
+                <p class="text-lg" style="max-width:100%">
+                    Bằng cách đăng nhập hoặc tạo tài khoản, bạn đồng ý với <a style="color:#5fc9fb;cursor: pointer;">Điều khoản & điều kiện</a> <br /> và tuyên bố về <a style="color:#5fc9fb;cursor: pointer;">Quyền riêng tư của chúng tôi</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <a asp-action="Tt1" asp-controller="Product" class="back-tt ssasq d-block" type="button">QUAY LẠI</a>
+</div>

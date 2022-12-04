@@ -1,0 +1,30 @@
+﻿@model eShopSolution.ViewModels.System.Users.RegisterRequest
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+    <div class="login-pages">
+        <p class="login--titles">Đăng ký</p>
+        <form asp-action="Register" asp-controller="Account" method="post" class="login-form">
+            <span style="visibility:hidden" class="email-lb">Địa chỉ email</span>
+            <img class="ico" src="/img/Union.png" /> <input asp-for="UserName" class="input--type" type="text" placeholder="Tên tài khoản">
+            <span style="visibility:hidden" class="email-lb">Nhập lại mật khẩu</span>
+            <img class="ico" src="/img/vector.png" /> <input asp-for="Password" class="input--type" type="password" placeholder="Mật khẩu"> <img class="ico shape" src="/img/Shape.png" />
+            <p class="pass">Mật khẩu của bạn phải có ít nhất 10 ký tự</p>
+
+            <span style="visibility:hidden" class="email-lb">Nhập lại mật khẩu</span>
+            <img class="ico" src="/img/vector.png" /> <input asp-for="ConfirmPassword" class="input--type" type="password" placeholder="Nhập lại mật khẩu"> <img class="ico shape" src="/img/Shape.png" />
+            <p class="pass">Mật khẩu của bạn phải có ít nhất 10 ký tự</p>
+
+            <input type="submit" class="btn-logins" value="Tạo tài khoản" />
+            <br />
+            <p class="text-lg">
+                Bằng cách đăng nhập hoặc tạo tài khoản, bạn đồng ý với <a style="color:#5fc9fb;cursor: pointer;">Điều khoản & điều kiện</a> <br /> và tuyên bố về <a style="color:#5fc9fb;cursor: pointer;">Quyền riêng tư của chúng tôi</a>
+            </p>
+        </form>
+    </div>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Giới Thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+    <div class="layout-success">
+        <div class="bao-sc">
+            <div class="tick2">
+                <img src="/img/ticks.png" />
+            </div>
+            <div class="tick3">
+                <p class="title-success">Thanh toán thành công</p>
+                <p class="title-successa">Cảm ơn quý khách</p>
+
+                <a href="/vi/Home/Index" class="btn-ss-success">VỀ TRANG CHỦ</a>
+            </div>
+        </div>
+
+    </div>

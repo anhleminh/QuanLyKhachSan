@@ -1,0 +1,47 @@
+﻿@model eShopSolution.ViewModels.System.Users.LoginRequest
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture.Name;
+}
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+    <div class="login-page">
+        <br />
+        <br />
+        <div style="text-align:center;color:red" asp-validation-summary="All" class="text-error">
+        </div>
+        <p class="login--title">Đăng nhập hoặc đăng kí tài khoản</p>
+        <form action="/@culture/Account/Login" method="post" class="login-form">
+            <span class="email-lb">Địa chỉ email</span>
+            <img class="ico" src="/img/Union.png" /> <input asp-for="UserName" class="input--type" type="text" placeholder="Tên tài khoản">
+            <span asp-validation-for="UserName" class="text-error"></span>
+            <span class="email-lb">Mật khẩu</span>
+            <img class="ico" src="/img/vector.png" /> <input asp-for="Password" class="input--type" type="password" placeholder="Mật khẩu">
+            <span asp-validation-for="Password" class="text-error"></span>
+            <div class="forgot">
+                <div class="checkss">
+                    <input type="checkbox" class="check"> <span class="check--text">Nhớ đến tôi</span>
+                </div>
+                <a href="#" class="forgot--text">Quên mật khẩu</a>
+            </div>
+            <input type="submit" class="btn-login" value="Đăng nhập" />
+            <p class="text-lg">
+                Hoặc đăng nhập bằng liên kết xã hội
+            </p>
+            <div class="socical">
+                <p class="fb"><img src="/img/Facebook.png" alt=""></p>
+                <p class="fb"><img src="/img/Instagram.png" alt=""></p>
+                <p class="fb"><img src="/img/Google.png" alt=""></p>
+            </div>
+            <p class="text-lg">
+                Không có tài khoản ? <a class="register" href="/@culture/Account/Register">Đăng ký ngay</a>
+            </p>
+            <p class="text-lg">
+                Bằng cách đăng nhập hoặc tạo tài khoản, bạn đồng ý với <a style="color:#5fc9fb;cursor: pointer;">Điều khoản & điều kiện</a> <br /> và tuyên bố về <a style="color:#5fc9fb;cursor: pointer;">Quyền riêng tư của chúng tôi</a>
+            </p>
+        </form>
+    </div>

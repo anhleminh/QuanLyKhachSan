@@ -1,0 +1,94 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Tất cả sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+@if (Model.LatestProducts.Count == 0)
+{
+    <div class="notfound">
+        <div class="baonotfound">
+            <div class="leftnot">
+                <span class="s404notfound">
+                    4
+                </span>
+                <span class="s404notfound">
+                    0
+                </span>
+                <span class="s404notfound">
+                    4
+                </span>
+            </div>
+            <div class="leftnot">
+                <p class="opsp">
+                    Oppps!
+                </p>
+                <p class="op">
+                    Trang bạn đang tìm không có rồi
+                </p>
+                <p class="op">
+                    Chúng tôi sẽ cập nhật trong thời gian sớm nhất
+                </p>
+                <div class="btnops">
+                    <a class="back-home-ops">Về trang chủ</a>
+                    <a class="back-home-opss">Quay lại</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <img src="/img/wave.png" alt="">
+        </footer>
+    </div>
+}
+else
+{
+    <div class="div-title-detail">
+        <p class="title-detail">Các phòng được đề xuất nhiều nhất ở khách sạn money</p>
+    </div>
+    <div class="detail">
+        @foreach (var item in Model.LatestProducts)
+        {
+            var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+            <div class="detail-room-detail">
+                <img src="@item.ThumbnailImage" alt="" class="img-detail">
+                <div class="room-des-detail">
+                    <p class="room-des--title-detail">@item.Name</p>
+                    <p class="room-des--category-detail">
+                        Danh mục: @for (int i = 0; i < @item.DanhMuc.Count; i++)
+                        {
+                            string s1 = default;
+                            if (i != @item.DanhMuc.Count - 1)
+                            {
+                                s1 += $"{@item.DanhMuc[i]}, ";
+                            }
+                            else
+                            {
+                                s1 += $"{@item.DanhMuc[i]}";
+                            }
+                            @(s1)
+                        }
+                    </p>
+                    <p class="room-des--category-detail">Loại: @item.TypeBed</p>
+                </div>
+                <div class="btn-more-detail">
+                    <p class="room-prices-detail">
+                        @{
+                            CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                            string salePrice = @item.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                        }
+                        @(salePrice) <sup>đ</sup>
+                    </p>
+                    <a href="@url" class="room-btn-detail">Xem chi tiết</a>
+                </div>
+            </div>
+        }
+    </div>
+}

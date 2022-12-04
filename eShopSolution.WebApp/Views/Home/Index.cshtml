@@ -1,0 +1,196 @@
+﻿@model HomeViewModel
+@using eShopSolution.ViewModels.Catalog.Products;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@{
+    var culture = CultureInfo.CurrentCulture.Name;
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="main-content">
+    <p class="main-content--title">Chồng sắp cưới của tôi và tôi đã đến đây để kết hôn trong nhà đám cưới của họ và chúng tôi không thất vọng. <br />khách sạn dơn giản là tuyệt đẹp ”</p>
+    <span class="main-content--author">SARAH  - KHÁCH HÀNG THÂN THIẾT</span>
+</div>
+<div class="img-content">
+    <div class="img-content--info">
+        <img src="/img/hinh1.png" class="img-content--info-img">
+        <div class="img-content--info-div">
+            <div class="img-content--info-subdiv">
+                <p class="img-content--info-div-title">Khách sạn</p>
+                <p class="img-content--info-div-des">Chất lượng</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="img-content--info">
+        <img src="/img/hinh2.png" class="img-content--info-img">
+        <div class="img-content--info-div">
+            <div class="img-content--info-subdiv">
+                <p class="img-content--info-div-title">Ngắm Biển </p>
+                <p class="img-content--info-div-des">Chất lượng</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="img-content--info">
+        <img src="/img/hinh3.png" class="img-content--info-img">
+        <div class="img-content--info-div">
+            <div class="img-content--info-subdiv">
+                <p class="img-content--info-div-title">Hồ bơi</p>
+                <p class="img-content--info-div-des">Chất lượng</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="img-content--info">
+        <img src="/img/hinh4.png" class="img-content--info-img">
+        <div class="img-content--info-div">
+            <div class="img-content--info-subdiv">
+                <p class="img-content--info-div-title">Bữa sáng</p>
+                <p class="img-content--info-div-des">Chất lượng</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="img-content--info">
+        <img src="/img/hinh5.png" class="img-content--info-img">
+        <div class="img-content--info-div">
+            <div class="img-content--info-subdiv">
+                <p class="img-content--info-div-title">Thư giãn</p>
+                <p class="img-content--info-div-des">Chất lượng</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="img-content--info">
+        <img src="/img/hinh6.png" class="img-content--info-img">
+        <div class="img-content--info-div">
+            <div class="img-content--info-subdiv">
+                <p class="img-content--info-div-title">Sang trọng</p>
+                <p class="img-content--info-div-des">Chất lượng</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="stay-us">
+    <div class="stay-us--info">
+        <p class="stay-us--info-title">stay with us</p>
+        <p class="stay-us--info-des">ĐẶT PHÒNG NGAY HÔM NAY</p>
+        <div style="padding:10px;display:flex;justify-content:center;width:100%;text-align:center" class="stay--arrow">
+            <i style="display:flex;align-items:center;justify-content:center;width:25px;height:25px;background: #699BF7; border-radius:100%;padding:20px;color:white" class="fa-solid fa-arrow-down"></i>
+        </div>
+    </div>
+</div>
+<div class="room">
+    <p class="room-title">rOOm</p>
+    <div class="room-title-leases">
+        @foreach (var item in Model.LatestProducts)
+        {
+            var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+            <div class="room-title-lease-lease">
+                <img src="@item.ThumbnailImage" class="room-title-lease-leases--img">
+                <div class="room-info">
+                    <a href="@url" style="text-decoration:none">
+                        <p class="lease-title">@item.Name</p>
+                        <p class="lease-type">LOVE ROOM</p>
+                        <p class="lease-price">
+                            @{
+                                CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                                string salePrice = item.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                            }
+                            @(salePrice) <sup>đ</sup>
+                        </p>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+    <form action="/@culture/Product/GetAll">
+        <button class="room-viewall">xem tất cả phòng</button>
+    </form>
+</div>
+<div class="content-foot">
+    <img class="content-foot--img">
+    <div class="content-foot--info">
+        <p class="content-foot--info--title">Ăn uống</p>
+        <p class="content-foot--info--subtitle"> Thực đơn với 3 món bắt đầu từ 300k</p>
+        <ul class="content-foot-list">
+            <li class="content-foot-list--items">Dịch vụ ăn uống</li>
+            <li class="content-foot-list--items">Đặt phòng trọn gói</li>
+            <li class="content-foot-list--items">Không gian hội nghị</li>
+            <li class="content-foot-list--items">Theo yêu cầu khách hàng</li>
+        </ul>
+        <a href="#" class="booknow">Đặt ngay</a>
+    </div>
+</div>
+<div class="content--title">
+    <p class="content--title-title">Kỳ Nghĩ Của bạn đang chờ</p>
+    <button class="content--title-button">Chọn một tour bất kì</button>
+</div>
+<div class="content-spa">
+    <div class="content-spa--info1">
+        <div class="content-spa--info2">
+            <p class="content-spa--info-text">THƯ GIÃN VỚI SPA TRỌN GÓI</p>
+            <p class="content-spa--info-des">Bắt đầu chỉ từ 350k</p>
+        </div>
+    </div>
+</div>
+<div class="div-csvc">
+    <div class="csvc-cln">
+        <div class="csvc-top">
+            <p class="ptitle">Cơ Sở Vật Chất Hotel</p>
+            <div class="listp">
+                <ul class="list-items-p">
+                    <p class="ptitle">Thức Ăn Và Đồ Uống</p>
+                    <li class="list-items-p-ii">Nhà Hàng</li>
+                    <li class="list-items-p-ii">Quày Bar / Phòng Chờ</li>
+                    <li class="list-items-p-ii">Dịch Vụ Phòng Suốt Đêm</li>
+                    <li style="visibility:hidden" class="list-items-p-ii">Dịch Vụ Phòng Suốt Đêm</li>
+                </ul>
+                <ul class="list-items-p">
+                    <p class="ptitle">Dịch Vụ</p>
+                    <li class="list-items-p-ii">Lễ Tân 24 Giờ</li>
+                    <li class="list-items-p-ii">Dich vụ Giặc Hấp Và Giặc Thường</li>
+                    <li class="list-items-p-ii">Dịch Vụ Phòng Suốt Đêm</li>
+                    <li class="list-items-p-ii">Nơi Chứa Hành Lý</li>
+
+                </ul>
+                <ul class="list-items-p dsads">
+                    <p class="ptitle">Khám Phá</p>
+                    <li class="list-items-p-ii">Giới Thiệu</li>
+                    <li class="list-items-p-ii">Tin Tức</li>
+                    <li class="list-items-p-ii">Liên Hệ</li>
+                    <li style="visibility:hidden" class="list-items-p-ii">Dịch Vụ Phòng Suốt Đêm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="csvc-top">
+            <p class="ptitle">Hỗ Trợ Khách Hàng</p>
+            <div class="listp">
+                <ul class="list-items-p">
+                    <p class="ptitle">HD Dặt Phòng Và Thanh Toán</p>
+
+                    <li class="list-items-p-ii">Hướng dẫn thanh toán</li>
+                    <li class="list-items-p-ii">Hướng dẫn đặt phòng</li>
+                    <li class="list-items-p-ii">Hướng dẫn đặt phòng trực tuyến</li>
+                </ul>
+                <ul class="list-items-p dsads">
+                    <p class="ptitle">Tài Khoản Của Tôi</p>
+
+                    <li class="list-items-p-ii">Đăng Nhập Tài Khoản</li>
+                    <li class="list-items-p-ii">Hồ Sơ</li>
+                    <li style="visibility:hidden" class="list-items-p-ii">Dịch Vụ Phòng Suốt Đêm</li>
+                </ul>
+                <ul class="list-items-p">
+                    <p class="ptitle">Làm Sạch Và An Ninh </p>
+
+                    <li class="list-items-p-ii">Làm Sạch Bằng Chất Khử Trùng</li>
+                    <li class="list-items-p-ii">Nước Rửa Tay Được Cung Cấp</li>
+                    <li class="list-items-p-ii">Thiết Bị Bảo Hộ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

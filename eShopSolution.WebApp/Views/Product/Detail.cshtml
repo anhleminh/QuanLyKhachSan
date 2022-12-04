@@ -1,0 +1,69 @@
+﻿@model ProductDetailViewModel
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+
+    <div class="detail-page">
+
+        <ul class="breadcrumb">
+            <li><a href="/"><localize>Trang chủ</localize></a> <span class="divider">/</span></li>
+            <li class="active">@Model.Product.Name</li>
+        </ul>
+        <div class="page-more-detail">
+            <img src="@Model.Product.ThumbnailImage" class="detail-page--img--detail">
+            <div class="detail-page--more">
+                <p class="detail-more--title">@Model.Product.Name</p>
+                <p class="detail-more--des">
+                    Danh mục: @for (int i = 0; i < @Model.Product.DanhMuc.Count; i++)
+                {
+                    string s1 = default;
+                    if (i != @Model.Product.DanhMuc.Count - 1)
+                    {
+                        s1 += $"{@Model.Product.DanhMuc[i]}, ";
+                    }
+                    else
+                    {
+                        s1 += $"{@Model.Product.DanhMuc[i]}";
+                    }
+                    @(s1)
+                }
+            </p>
+            <p class="detail-more--des"> <img class="icon" src="/img/people.png" /> @Model.Product.CoundCustomer khách</p>
+            <p class="detail-more--des"> <img class="icon" src="/img/bed.png" /> @Model.Product.TypeBed</p>
+            <p class="detail-more--des"> <img class="icon" src="/img/wifi.png" /> Wifi miễn phí</p>
+            <p class="detail-more--des"> <img class="icon" src="/img/tick.png" /> Đồ uống miễn phí chào đón khách</p>
+            <p class="detail-more--des"> <img class="icon" src="/img/tick.png" /> Đặt ngay, thanh toán đặt cọc</p>
+            <div class="detail-page-book">
+                <p class="book-prices">
+                    @{
+                        CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                        string salePrice = @Model.Product.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                    }
+                    @(salePrice) <sup>đ</sup>
+                </p>
+                <a style="border:1px solid #E30050;color:#ffff;text-decoration:none" class="room-btn-book-detail" asp-action="Book" asp-controller="Product">Đặt ngay</a>
+            </div>
+        </div>
+    </div>
+    <div class="description-more">
+        <p class="destitle">Mô tả</p>
+        <p class="des-more">@Html.Raw(Model.Product.Details)</p>
+    </div>
+    <div class="description-more">
+        <p class="destitle">Thông tin bổ sung</p>
+        <div class="div--info-bed">
+            <span class="bed-type1">Loại giường</span>
+            <span class="bed-type2">@Model.Product.TypeBed</span>
+        </div>
+
+    </div>
+</div>

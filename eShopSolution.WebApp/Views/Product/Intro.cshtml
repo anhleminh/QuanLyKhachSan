@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Giới Thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@section changepic{
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+}
+    <style>
+        .fade:not(.show) {
+            opacity: 1;
+        }
+    </style>
+    <div class="intro">
+        <p class="intro-title">Webcome to lucky</p>
+        <div class="intro-details">
+            <div class="intro-detail">
+                <p class="intro-detail--title">MỤC TIÊU</p>
+                <p class="intro-detail--des">Bằng khát vọng tiên phong cùng chiến lược đầu tư – phát triển bền vững, lấy niềm tin của khách hàng là thước đo chất lượng dịch vụ, Lucky hotel mong muốn tạo nên một thương hiệu gắn với sự uy tín.</p>
+            </div>
+            <div class="intro-detail">
+                <p class="intro-detail--title">SỨ MỆNH</p>
+                <p class="intro-detail--des">Sứ mệnh của khách sạn là cung cấp các tiện nghi và dịch vụ tốt nhất cho khách đến ở, đồng thời tạo một môi trường làm việc lý tưởng cho nhân viên khách sạn và thu về lợi nhuận cho chủ đầu tư.</p>
+            </div>
+            <div class="intro-detail">
+                <p class="intro-detail--title">TƯƠNG LAI</p>
+                <p class="intro-detail--des">Trong tương lai là điều mà khách sạn chúng tôi lúc nào cũng phải sẵn sàng để đón nhận, không chỉ dừng ở việc theo kịp xu hướng hiện tại, mà phải trở thành người dẫn đầu xu hướng mới.</p>
+            </div>
+        </div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="/img/intro.png" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="/img/banner1.png" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="/img/banner1_1.png" style="width:100%">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>

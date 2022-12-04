@@ -1,0 +1,54 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Tất cả sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@section hd{
+    <script>
+        $('header').css('display', 'none')
+    </script>
+}
+    <div class="div-title-detail">
+        <p class="title-detail">Các phòng được đề xuất nhiều nhất ở khách sạn money</p>
+    </div>
+    <div class="detail">
+    @foreach (var item in Model.LatestProducts)
+    {
+        var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+        <div class="detail-room-detail">
+            <img src="@item.ThumbnailImage" alt="" class="img-detail">
+            <div class="room-des-detail">
+                <p class="room-des--title-detail">@item.Name</p>
+                <p class="room-des--category-detail">
+                    Danh mục: @for (int i = 0; i < @item.DanhMuc.Count; i++)
+                    {
+                        string s1 = default;
+                        if (i != @item.DanhMuc.Count - 1)
+                        {
+                            s1 += $"{@item.DanhMuc[i]}, ";
+                        }
+                        else
+                        {
+                            s1 += $"{@item.DanhMuc[i]}";
+                        }
+                        @(s1)
+                    }
+                </p>
+                <p class="room-des--category-detail">Loại: @item.TypeBed</p>
+            </div>
+            <div class="btn-more-detail">
+                <p class="room-prices-detail">
+                    @{
+                        CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                        string salePrice = @item.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                    }
+                    @(salePrice) <sup>đ</sup>
+                </p>
+                <a href="@url" class="room-btn-detail">Xem chi tiết</a>
+            </div>
+        </div>
+    }
+</div>
